@@ -5,9 +5,13 @@ Home: https://github.com/influxdata/influxdb-python
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/influxdb-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python client for InfluxDB
+
+Development: https://github.com/simplejson/simplejson
+
+Documentation: http://simplejson.readthedocs.io/
 
 InfluxDB-Python is a client for interacting with InfluxDB. InfluxDB is an
 open-source distributed time series database, find more about InfluxDB at
