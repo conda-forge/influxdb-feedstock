@@ -6,27 +6,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 46f85e7b04ee4b3dee894672be6a295c94709003a7ddea8820deec2ac4d8b27a
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
     - msgpack-python
     - requests >=2.17.0
     - six >=1.10.0
-    - python
+    - python >={{ python_min }}
     - python-dateutil >=2.6.0
     - pytz
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - influxdb
 
